@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CIDADE GRANDE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars"></div>
+
+  <main class="page">
+    <header>
+      <h1>HOSPITAL</h1>
+      <p>SEJA GENTE BOA</p>
+      <div class="line"></div>
+    </header>
+
+    <section class="card">
+      <label for="equipe">SELECIONE A EQUIPE:</label>
+
+      <select id="hierarquia">
+        <option value="hospital">hospital</option>
+      </select>
+
+      <textarea id="json" placeholder="Cole o JSON aqui..."></textarea>
+
+      <div class="buttons">
+        <button id="gerar">GERAR HIERARQUIA</button>
+        <button id="copiar">COPIAR</button>
+      </div>
+
+      <div id="resultado"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

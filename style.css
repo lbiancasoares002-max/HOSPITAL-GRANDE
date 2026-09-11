@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(0,255,30,.14), transparent 28%),
+    radial-gradient(circle at 100% 50%, rgba(0,255,30,.10), transparent 25%),
+    linear-gradient(135deg, #06362d 0%, #092d28 42%, #08241f 100%);
+  color: #00ff12;
+  font-family: "Courier New", monospace;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .35;
+  background-image:
+    radial-gradient(circle, #00ff12 1px, transparent 1px);
+  background-size: 200px 200px;
+  background-position: 30px 20px;
+}
+
+.page {
+  width: min(950px, calc(100% - 40px));
+  margin: 32px auto 22px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+h1 {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: clamp(42px, 7vw, 58px);
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #00ff08;
+  text-shadow:
+    0 0 8px rgba(0,255,0,.8),
+    0 0 24px rgba(0,255,0,.35);
+}
+
+header p {
+  margin: 16px 0 12px;
+  font-size: 18px;
+  letter-spacing: 4px;
+}
+
+.line {
+  width: 190px;
+  height: 1px;
+  margin: auto;
+  background: #00ff12;
+  box-shadow: 0 0 10px #00ff12;
+  opacity: .45;
+}
+
+.card {
+  background: rgba(7, 13, 31, .92);
+  border: 2px solid #00ff1a;
+  border-radius: 16px;
+  padding: 48px 45px 45px;
+  box-shadow:
+    0 0 18px rgba(0,255,25,.22),
+    inset 0 0 35px rgba(0,0,0,.25);
+}
+
+label {
+  display: block;
+  margin-bottom: 13px;
+  font-family: Arial, sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: .5px;
+}
+
+select,
+textarea,
+#resultado {
+  width: 100%;
+  border: 2px solid #00ff1a;
+  border-radius: 9px;
+  background: #080e20;
+  color: #00ff20;
+  box-shadow: 0 0 10px rgba(0,255,20,.08);
+}
+
+select {
+  height: 55px;
+  padding: 0 20px;
+  font: 16px "Courier New", monospace;
+  outline: none;
+  margin-bottom: 28px;
+}
+
+textarea {
+  height: 160px;
+  padding: 17px 19px;
+  resize: vertical;
+  outline: none;
+  font: 15px "Courier New", monospace;
+}
+
+textarea::placeholder {
+  color: #008c24;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+button {
+  height: 54px;
+  border: 0;
+  border-radius: 8px;
+  background: #00f30a;
+  color: #001000;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  cursor: pointer;
+  box-shadow: 0 0 16px rgba(0,255,20,.24);
+  transition: .2s;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+#copiar {
+  background: #00b900;
+}
+
+#resultado {
+  min-height: 60px;
+  margin-top: 28px;
+  padding: 18px;
+  border-left: 5px solid #00ff1a;
+  white-space: pre-wrap;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media (max-width: 650px) {
+  .page {
+    width: min(94%, 950px);
+    margin-top: 20px;
+  }
+
+  .card {
+    padding: 30px 20px;
+  }
+
+  .buttons {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+}
