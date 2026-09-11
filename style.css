@@ -1,178 +1,413 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-html, body {
-  margin: 0;
-  min-height: 100%;
+html,
+body {
+    margin: 0;
+    min-height: 100%;
 }
 
 body {
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at 50% 0%, rgba(0,255,30,.14), transparent 28%),
-    radial-gradient(circle at 100% 50%, rgba(0,255,30,.10), transparent 25%),
-    linear-gradient(135deg, #06362d 0%, #092d28 42%, #08241f 100%);
-  color: #00ff12;
-  font-family: "Courier New", monospace;
-  overflow-x: hidden;
+    min-height: 100vh;
+    background: radial-gradient( circle at 50% 0%, rgba(0, 255, 30, .14), transparent 28% ), radial-gradient( circle at 100% 50%, rgba(0, 255, 30, .10), transparent 25% ), linear-gradient( 135deg, #06362d 0%, #092d28 42%, #08241f 100% );
+    color: #00ff12;
+    font-family: "Courier New", monospace;
+    overflow-x: hidden;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: .35;
-  background-image:
-    radial-gradient(circle, #00ff12 1px, transparent 1px);
-  background-size: 200px 200px;
-  background-position: 30px 20px;
-}
+
+    /* ==========================================
+   FUNDO
+========================================== */
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: .35;
+        background-image: radial-gradient( circle, #00ff12 1px, transparent 1px );
+        background-size: 200px 200px;
+        background-position: 30px 20px;
+    }
+
+
+/* ==========================================
+   PÁGINA
+========================================== */
 
 .page {
-  width: min(950px, calc(100% - 40px));
-  margin: 32px auto 22px;
+    width: min( 950px, calc(100% - 30px) );
+    margin: 35px auto 30px;
 }
 
+
+/* ==========================================
+   CABEÇALHO
+========================================== */
+
 header {
-  text-align: center;
-  margin-bottom: 38px;
+    text-align: center;
+    margin-bottom: 35px;
 }
 
 h1 {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  font-size: clamp(42px, 7vw, 58px);
-  font-weight: 900;
-  letter-spacing: 2px;
-  color: #00ff08;
-  text-shadow:
-    0 0 8px rgba(0,255,0,.8),
-    0 0 24px rgba(0,255,0,.35);
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: clamp(38px, 7vw, 58px);
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #00ff08;
+    text-shadow: 0 0 8px rgba(0, 255, 0, .8), 0 0 24px rgba(0, 255, 0, .35);
 }
 
 header p {
-  margin: 16px 0 12px;
-  font-size: 18px;
-  letter-spacing: 4px;
+    margin: 15px 0 12px;
+    font-size: 17px;
+    letter-spacing: 4px;
+    font-weight: bold;
 }
 
 .line {
-  width: 190px;
-  height: 1px;
-  margin: auto;
-  background: #00ff12;
-  box-shadow: 0 0 10px #00ff12;
-  opacity: .45;
+    width: 190px;
+    height: 1px;
+    margin: auto;
+    background: #00ff12;
+    box-shadow: 0 0 10px #00ff12;
+    opacity: .45;
 }
+
+
+/* ==========================================
+   CARD PRINCIPAL
+========================================== */
 
 .card {
-  background: rgba(7, 13, 31, .92);
-  border: 2px solid #00ff1a;
-  border-radius: 16px;
-  padding: 48px 45px 45px;
-  box-shadow:
-    0 0 18px rgba(0,255,25,.22),
-    inset 0 0 35px rgba(0,0,0,.25);
+    background: rgba(7, 13, 31, .94);
+    border: 2px solid #00ff1a;
+    border-radius: 16px;
+    padding: 38px 40px 40px;
+    box-shadow: 0 0 18px rgba(0, 255, 25, .22), inset 0 0 35px rgba(0, 0, 0, .25);
 }
+
+
+/* ==========================================
+   LABEL
+========================================== */
 
 label {
-  display: block;
-  margin-bottom: 13px;
-  font-family: Arial, sans-serif;
-  font-weight: 800;
-  font-size: 16px;
-  letter-spacing: .5px;
+    display: block;
+    margin-bottom: 12px;
+    font-family: Arial, sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: .5px;
 }
 
-select,
-textarea,
-#resultado {
-  width: 100%;
-  border: 2px solid #00ff1a;
-  border-radius: 9px;
-  background: #080e20;
-  color: #00ff20;
-  box-shadow: 0 0 10px rgba(0,255,20,.08);
-}
+
+/* ==========================================
+   SELECT
+========================================== */
 
 select {
-  height: 55px;
-  padding: 0 20px;
-  font: 16px "Courier New", monospace;
-  outline: none;
-  margin-bottom: 28px;
+    width: 100%;
+    height: 55px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    border: 2px solid #00ff1a;
+    border-radius: 9px;
+    background: #080e20;
+    color: #00ff20;
+    font: 16px "Courier New", monospace;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 255, 20, .08);
 }
+
+
+/* ==========================================
+   TEXTAREA
+========================================== */
 
 textarea {
-  height: 160px;
-  padding: 17px 19px;
-  resize: vertical;
-  outline: none;
-  font: 15px "Courier New", monospace;
+    width: 100%;
+    height: 120px;
+    padding: 17px 19px;
+    resize: vertical;
+    outline: none;
+    border: 2px solid #00ff1a;
+    border-radius: 9px;
+    background: #080e20;
+    color: #00ff20;
+    font: 15px "Courier New", monospace;
+    box-shadow: 0 0 10px rgba(0, 255, 20, .08);
 }
 
-textarea::placeholder {
-  color: #008c24;
-}
+    textarea::placeholder {
+        color: #008c24;
+    }
+
+
+/* ==========================================
+   BOTÕES
+========================================== */
 
 .buttons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin-top: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 button {
-  height: 54px;
-  border: 0;
-  border-radius: 8px;
-  background: #00f30a;
-  color: #001000;
-  font-family: Arial, sans-serif;
-  font-size: 15px;
-  font-weight: 900;
-  letter-spacing: 2px;
-  cursor: pointer;
-  box-shadow: 0 0 16px rgba(0,255,20,.24);
-  transition: .2s;
+    height: 54px;
+    border: 0;
+    border-radius: 8px;
+    background: #00f30a;
+    color: #001000;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    cursor: pointer;
+    box-shadow: 0 0 16px rgba(0, 255, 20, .24);
+    transition: .2s;
 }
 
-button:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.08);
-}
+    button:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.08);
+    }
+
+    button:active {
+        transform: translateY(0);
+    }
 
 #copiar {
-  background: #00b900;
+    background: #00b900;
 }
+
+
+/* ==========================================
+   RESULTADO
+========================================== */
 
 #resultado {
-  min-height: 60px;
-  margin-top: 28px;
-  padding: 18px;
-  border-left: 5px solid #00ff1a;
-  white-space: pre-wrap;
-  font-size: 14px;
-  line-height: 1.6;
+    width: 100%;
+    margin-top: 28px;
+    padding: 20px;
+    border: 2px solid #00ff1a;
+    border-left: 5px solid #00ff1a;
+    border-radius: 10px;
+    background: rgba(8, 14, 32, .96);
+    box-shadow: 0 0 12px rgba(0, 255, 20, .08);
 }
 
+
+/* ==========================================
+   CABEÇALHO DO RESULTADO
+========================================== */
+
+.resultado-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid rgba(0, 255, 26, .25);
+}
+
+.resultado-titulo {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #00ff08;
+}
+
+.resultado-subtitulo {
+    display: block;
+    margin-top: 4px;
+    color: #00b82a;
+    font-size: 13px;
+}
+
+.contador {
+    padding: 7px 12px;
+    border: 1px solid #00ff1a;
+    border-radius: 20px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+
+/* ==========================================
+   CARGOS
+========================================== */
+
+.lista-cargos {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.cargo {
+    border: 1px solid rgba(0, 255, 26, .65);
+    border-radius: 9px;
+    background: rgba(0, 255, 20, .025);
+    overflow: hidden;
+    transition: .2s;
+}
+
+    .cargo:hover {
+        border-color: #00ff1a;
+        box-shadow: 0 0 14px rgba(0, 255, 20, .12);
+        transform: translateX(2px);
+    }
+
+
+/* ==========================================
+   TOPO DO CARGO
+========================================== */
+
+.cargo-topo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 17px;
+    background: rgba(0, 255, 20, .06);
+    border-bottom: 1px solid rgba(0, 255, 26, .18);
+}
+
+.numero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px;
+    height: 40px;
+    border: 1px solid #00ff1a;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.cargo-nome {
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: .5px;
+    color: #00ff12;
+}
+
+
+/* ==========================================
+   CONTEÚDO DO CARGO
+========================================== */
+
+.cargo-conteudo {
+    padding: 15px 18px 17px;
+}
+
+.titulo-requisitos {
+    margin-bottom: 11px;
+    color: #008f28;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+/* ==========================================
+   REQUISITOS
+========================================== */
+
+.requisitos {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.requisito {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 14px;
+    color: #00f51a;
+}
+
+.check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #00ff1a;
+    border-radius: 4px;
+    font-size: 11px;
+    flex-shrink: 0;
+}
+
+
+/* ==========================================
+   SEM REQUISITOS
+========================================== */
+
+.sem-requisitos {
+    color: #007d23;
+    font-size: 13px;
+    font-style: italic;
+}
+
+
+/* ==========================================
+   ERRO
+========================================== */
+
+.erro {
+    padding: 20px;
+    border: 1px solid #ff3333;
+    border-radius: 8px;
+    color: #ff5555;
+    background: rgba(255, 0, 0, .05);
+}
+
+
+/* ==========================================
+   CELULAR
+========================================== */
+
 @media (max-width: 650px) {
-  .page {
-    width: min(94%, 950px);
-    margin-top: 20px;
-  }
 
-  .card {
-    padding: 30px 20px;
-  }
+    .page {
+        width: 94%;
+        margin-top: 20px;
+    }
 
-  .buttons {
-    grid-template-columns: 1fr;
-  }
+    .card {
+        padding: 28px 18px;
+    }
 
-  h1 {
-    font-size: 40px;
-  }
+    .buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .resultado-cabecalho {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .cargo-nome {
+        font-size: 15px;
+    }
+
+    .requisito {
+        font-size: 13px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
 }
