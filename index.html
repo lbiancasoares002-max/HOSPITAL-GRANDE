@@ -1,60 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Hierarquia Hospital</title>
-
+    <title>CIDADE GRANDE</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
     <div class="stars"></div>
 
     <main class="page">
-
         <header>
-            <h1>HOSPITAL</h1>
-            <p>HIERARQUIA DA EQUIPE</p>
+            <h1>CIDADE GRANDE</h1>
+            <p>SEJA GENTE BOA</p>
             <div class="line"></div>
         </header>
 
         <section class="card">
-
-            <label for="equipe">
-                SELECIONE A EQUIPE:
-            </label>
+            <label for="equipe">SELECIONE A EQUIPE:</label>
 
             <select id="equipe">
-                <option value="hospital">Hospital</option>
+                <option value="HP">HP</option>
             </select>
 
-            <textarea id="json"
-                      placeholder="Cole o JSON aqui... (opcional)"></textarea>
+            <textarea id="json" placeholder="Cole o JSON aqui..."></textarea>
 
             <div class="buttons">
-
-                <button id="gerarHierarquia">
-                    GERAR HIERARQUIA
-                </button>
-
-                <button id="copiar">
-                    COPIAR
-                </button>
-
+                <button id="gerar">GERAR HIERARQUIA</button>
+                <button id="copiar">COPIAR</button>
             </div>
 
             <div id="resultado"></div>
-
         </section>
-
     </main>
 
     <script src="script.js"></script>
-
 </body>
-
 </html>

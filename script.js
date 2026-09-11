@@ -1,32 +1,69 @@
-const CARGOS = [
-    {
-        id: "1416241534977839207",
-        nome: "Estagiário",
-        numero: "01"
-    },
-    {
-        id: "1416239763962462339",
-        nome: "Técnico de Enfermagem",
-        numero: "02"
-    },
-    {
-        id: "1490891096526688308",
-        nome: "Recrutador",
-        numero: "03"
-    },
-    {
-        id: "1416227610589003806",
-        nome: "Enfermeiro",
-        numero: "04"
-    },
-    {
-        id: "1416228070435852359",
-        nome: "Médico",
-        numero: "05"
-    },
-    {
-        id: "1416228954234290346",
-        nome: "Supervisor",
-        numero: "06"
+const dadosExemplo = {
+    HP: {
+        "01": "Estagiário",
+        "02": "Técnico de Enfermagem",
+        "03": "Recrutador",
+        "04": "Enfermeiro",
+        "05": "Médico",
+        "06": "Supervisor",
+        "07": "Auxiliar",
+        "08": "Vice-Diretor(a) / Diretor / Resp. Geral HP",
+        "09": "Secretário da Saúde",
+        "10": "Ministro da Saúde"
     }
-];
+};
+
+const equipe = document.getElementById("equipe");
+const json = document.getElementById("json");
+const resultado = document.getElementById("resultado");
+
+function gerarHierarquia() {
+    const texto = json.value.trim();
+
+    if (!texto) {
+        mostrar(dadosExemplo[equipe.value]);
+        return;
+    }
+
+    try {
+        const dados = JSON.parse(texto);
+        mostrar(dados);
+    } catch (erro) {
+        resultado.textContent = "JSON inválido. Confira o conteúdo e tente novamente.";
+    }
+}
+
+function mostrar(dados) {
+    if (!dados || typeof dados !== "object") {
+        resultado.textContent = "Nenhuma hierarquia encontrada.";
+        return;
+    }
+
+    const linhas = [];
+
+    Object.entries(dados).forEach(([cargo, nome]) => {
+        linhas.push(`${cargo} - ${nome}`);
+    });
+
+    resultado.textContent = linhas.join("\n");
+}
+
+document.getElementById("gerar").addEventListener("click", gerarHierarquia);
+
+document.getElementById("copiar").addEventListener("click", async () => {
+    const texto = resultado.textContent.trim();
+
+    if (!texto) {
+        alert("Gere a hierarquia primeiro.");
+        return;
+    }
+
+    try {
+        await navigator.clipboard.writeText(texto);
+        alert("Hierarquia copiada!");
+    } catch {
+        alert("Não foi possível copiar automaticamente.");
+    }
+});
+
+mostrar(dadosExemplo.HP);
